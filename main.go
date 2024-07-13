@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/Kyuubang/gh-org-extras/pkg/cmd/member"
+	"github.com/Kyuubang/gh-org-extras/pkg/cmd/team"
 	"github.com/spf13/cobra"
 )
 
@@ -25,6 +26,7 @@ func rootCmd() *cobra.Command {
 
 	// add subcommands
 	cmd.AddCommand(member.NewCmdMember())
+	cmd.AddCommand(team.NewCmdTeam())
 
 	return cmd
 }
