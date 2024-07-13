@@ -4,6 +4,7 @@ go 1.20
 
 require (
 	github.com/cli/go-gh/v2 v2.9.0
+	github.com/olekukonko/tablewriter v0.0.5
 	github.com/spf13/cobra v1.8.1
 )
 
