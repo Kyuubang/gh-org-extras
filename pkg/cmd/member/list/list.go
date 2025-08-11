@@ -89,7 +89,7 @@ func getMembers(opts *ListOptions) ([]MemberList, error) {
 
 	var response []MemberList
 
-	err = httpClient.Get(fmt.Sprintf("orgs/%s/members", opts.Organization), &response)
+	err = httpClient.Get(fmt.Sprintf("orgs/%s/members?per_page=100&role=member", opts.Organization), &response)
 	if err != nil {
 		return nil, err
 	}
