@@ -17,6 +17,7 @@ type ListOptions struct {
 }
 
 type Team struct {
+	ID   int    `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
 	Slug string `json:"slug,omitempty"`
 }
@@ -53,10 +54,10 @@ func listRun(opts *ListOptions) error {
 	}
 
 	table := tablewriter.NewWriter(os.Stdout)
-	table.SetHeader([]string{"Name", "Slug"})
+	table.SetHeader([]string{"ID", "Name", "Slug"})
 
 	for _, team := range teams {
-		table.Append([]string{team.Name, team.Slug})
+		table.Append([]string{fmt.Sprintf("%d", team.ID), team.Name, team.Slug})
 	}
 
 	table.Render()
